@@ -4,26 +4,26 @@
 int main() {
 
     // =========================
-    // CARTA 1 - RIO DE JANEIRO
+    // CARTA 1 - SAO PAULO
     // =========================
 
-    char cidade1[50] = "Rio de Janeiro";
-    char estado1[3] = "RJ";
-    int populacao1 = 6748000;
-    float area1 = 1200.25;
-    float pib1 = 364.58;
-    int pontos1 = 40;
+    char cidade1[50] = "Sao Paulo";
+    char estado1[3] = "SP";
+    int populacao1 = 12330000;
+    float area1 = 1521.11;
+    float pib1 = 699.28;
+    int pontos1 = 50;
 
     // =========================
-    // CARTA 2 - SAO PAULO
+    // CARTA 2 - RIO DE JANEIRO
     // =========================
 
-    char cidade2[50] = "Sao Paulo";
-    char estado2[3] = "SP";
-    int populacao2 = 12330000;
-    float area2 = 1521.11;
-    float pib2 = 699.28;
-    int pontos2 = 50;
+    char cidade2[50] = "Rio de Janeiro";
+    char estado2[3] = "RJ";
+    int populacao2 = 6748000;
+    float area2 = 1200.25;
+    float pib2 = 364.58;
+    int pontos2 = 40;
 
     // =========================
     // CALCULOS
@@ -37,7 +37,7 @@ int main() {
 
     int atributo1, atributo2;
 
-    printf("\n=== SUPER TRUNFO - RIO vs SAO PAULO ===\n");
+    printf("\n=== SUPER TRUNFO - SAO PAULO vs RIO DE JANEIRO ===\n");
 
     // =========================
     // PRIMEIRO ATRIBUTO
@@ -99,7 +99,7 @@ int main() {
         default: printf("Opcao invalida!\n"); return 0;
     }
 
-    // REGRA ESPECIAL DA DENSIDADE
+    // REGRA ESPECIAL DA DENSIDADE (menor vence)
     if (atributo1 == 4) {
         v1a1 = 1 / v1a1;
         v2a1 = 1 / v2a1;
