@@ -9,24 +9,24 @@ int main() {
 
     char cidade1[50] = "Rio de Janeiro";
     char estado1[3] = "RJ";
-    int populacao1 = 6748000;          // população aproximada
-    float area1 = 1200.25;             // km²
-    float pib1 = 364.58;               // PIB em bilhões
+    int populacao1 = 6748000;
+    float area1 = 1200.25;
+    float pib1 = 364.58;
     int pontos1 = 40;
 
     // =========================
-    // CARTA 2 - SÃO PAULO
+    // CARTA 2 - SAO PAULO
     // =========================
 
-    char cidade2[50] = "São Paulo";
+    char cidade2[50] = "Sao Paulo";
     char estado2[3] = "SP";
-    int populacao2 = 12330000;         // população aproximada
-    float area2 = 1521.11;             // km²
-    float pib2 = 699.28;               // PIB em bilhões
+    int populacao2 = 12330000;
+    float area2 = 1521.11;
+    float pib2 = 699.28;
     int pontos2 = 50;
 
     // =========================
-    // CÁLCULOS AUTOMÁTICOS
+    // CALCULOS
     // =========================
 
     float densidade1 = (float)populacao1 / area1;
@@ -37,19 +37,19 @@ int main() {
 
     int atributo1, atributo2;
 
-    printf("\n=== SUPER TRUNFO - RIO vs SÃO PAULO ===\n");
+    printf("\n=== SUPER TRUNFO - RIO vs SAO PAULO ===\n");
 
     // =========================
     // PRIMEIRO ATRIBUTO
     // =========================
 
     printf("\nEscolha o PRIMEIRO atributo:\n");
-    printf("1 - População\n");
-    printf("2 - Área\n");
+    printf("1 - Populacao\n");
+    printf("2 - Area\n");
     printf("3 - PIB\n");
-    printf("4 - Densidade Demográfica\n");
+    printf("4 - Densidade Demografica\n");
     printf("5 - PIB per capita\n");
-    printf("Opção: ");
+    printf("Opcao: ");
     scanf("%d", &atributo1);
 
     // =========================
@@ -58,71 +58,69 @@ int main() {
 
     printf("\nEscolha o SEGUNDO atributo (diferente do primeiro):\n");
 
-    for (int i = 1; i <= 5; i++) {
-        if (i != atributo1) {
-            switch(i) {
-                case 1: printf("1 - População\n"); break;
-                case 2: printf("2 - Área\n"); break;
-                case 3: printf("3 - PIB\n"); break;
-                case 4: printf("4 - Densidade Demográfica\n"); break;
-                case 5: printf("5 - PIB per capita\n"); break;
-            }
-        }
+    switch(atributo1) {
+        case 1: printf("2 - Area\n3 - PIB\n4 - Densidade\n5 - PIB per capita\n"); break;
+        case 2: printf("1 - Populacao\n3 - PIB\n4 - Densidade\n5 - PIB per capita\n"); break;
+        case 3: printf("1 - Populacao\n2 - Area\n4 - Densidade\n5 - PIB per capita\n"); break;
+        case 4: printf("1 - Populacao\n2 - Area\n3 - PIB\n5 - PIB per capita\n"); break;
+        case 5: printf("1 - Populacao\n2 - Area\n3 - PIB\n4 - Densidade\n"); break;
+        default:
+            printf("Opcao invalida!\n");
+            return 0;
     }
 
-    printf("Opção: ");
+    printf("Opcao: ");
     scanf("%d", &atributo2);
 
     if (atributo1 == atributo2) {
-        printf("\nErro: Você escolheu o mesmo atributo duas vezes!\n");
+        printf("\nErro: atributos iguais!\n");
         return 0;
     }
 
-    float valor1_attr1 = 0, valor2_attr1 = 0;
-    float valor1_attr2 = 0, valor2_attr2 = 0;
+    float v1a1, v2a1, v1a2, v2a2;
 
-    // =========================
     // ATRIBUTO 1
-    // =========================
-
     switch(atributo1) {
-        case 1: valor1_attr1 = populacao1; valor2_attr1 = populacao2; break;
-        case 2: valor1_attr1 = area1; valor2_attr1 = area2; break;
-        case 3: valor1_attr1 = pib1; valor2_attr1 = pib2; break;
-        case 4: valor1_attr1 = densidade1; valor2_attr1 = densidade2; break;
-        case 5: valor1_attr1 = pibPerCapita1; valor2_attr1 = pibPerCapita2; break;
-        default:
-            printf("Opção inválida!\n");
-            return 0;
+        case 1: v1a1 = populacao1; v2a1 = populacao2; break;
+        case 2: v1a1 = area1; v2a1 = area2; break;
+        case 3: v1a1 = pib1; v2a1 = pib2; break;
+        case 4: v1a1 = densidade1; v2a1 = densidade2; break;
+        case 5: v1a1 = pibPerCapita1; v2a1 = pibPerCapita2; break;
+        default: printf("Opcao invalida!\n"); return 0;
     }
 
-    // =========================
     // ATRIBUTO 2
-    // =========================
-
     switch(atributo2) {
-        case 1: valor1_attr2 = populacao1; valor2_attr2 = populacao2; break;
-        case 2: valor1_attr2 = area1; valor2_attr2 = area2; break;
-        case 3: valor1_attr2 = pib1; valor2_attr2 = pib2; break;
-        case 4: valor1_attr2 = densidade1; valor2_attr2 = densidade2; break;
-        case 5: valor1_attr2 = pibPerCapita1; valor2_attr2 = pibPerCapita2; break;
-        default:
-            printf("Opção inválida!\n");
-            return 0;
+        case 1: v1a2 = populacao1; v2a2 = populacao2; break;
+        case 2: v1a2 = area1; v2a2 = area2; break;
+        case 3: v1a2 = pib1; v2a2 = pib2; break;
+        case 4: v1a2 = densidade1; v2a2 = densidade2; break;
+        case 5: v1a2 = pibPerCapita1; v2a2 = pibPerCapita2; break;
+        default: printf("Opcao invalida!\n"); return 0;
     }
 
-    // =========================
-    // SOMA DOS ATRIBUTOS
-    // =========================
+    // REGRA ESPECIAL DA DENSIDADE
+    if (atributo1 == 4) {
+        v1a1 = 1 / v1a1;
+        v2a1 = 1 / v2a1;
+    }
 
-    float soma1 = valor1_attr1 + valor1_attr2;
-    float soma2 = valor2_attr1 + valor2_attr2;
+    if (atributo2 == 4) {
+        v1a2 = 1 / v1a2;
+        v2a2 = 1 / v2a2;
+    }
+
+    float soma1 = v1a1 + v1a2;
+    float soma2 = v2a1 + v2a2;
 
     printf("\n--- RESULTADO ---\n");
-    printf("%s (%s): Soma = %.2f\n", cidade1, estado1, soma1);
-    printf("%s (%s): Soma = %.2f\n", cidade2, estado2, soma2);
+    printf("%s (%s): %.2f + %.2f = %.2f\n",
+           cidade1, estado1, v1a1, v1a2, soma1);
 
-    // Operador ternário
+    printf("%s (%s): %.2f + %.2f = %.2f\n",
+           cidade2, estado2, v2a1, v2a2, soma2);
+
+    // Operador ternario
     (soma1 > soma2) ?
         printf("\nVencedor: %s!\n", cidade1) :
         (soma2 > soma1) ?
